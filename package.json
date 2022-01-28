@@ -1,0 +1,76 @@
+{
+	"name": "electron-app-1",
+	"version": "1.0.0",
+	"description": "magic app",
+	"main": "index.js",
+	"scripts": {
+		"start": "electron .",
+		"dist": "electron-builder build",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"package": "electron-forge package",
+		"make": "electron-forge make"
+	},
+	"keywords": [],
+	"author": "magic appmaker",
+	"license": "ISC",
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.63",
+		"@electron-forge/maker-deb": "^6.0.0-beta.63",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.63",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+		"@electron-forge/maker-zip": "^6.0.0-beta.63",
+		"electron": "^9.0.0",
+		"electron-builder": "^22.14.5",
+		"electron-rebuild": "^3.2.7"
+	},
+	"dependencies": {
+		"electron-squirrel-startup": "^1.0.0",
+		"express": "^4.17.2",
+		"robotjs": "^0.6.0"
+	},
+	"build": {
+		"productName": "Magical App",
+		"appId": "magicapp",
+		"win": {
+			"target": [
+				"portable"
+			],
+			"icon": "resources/magic-wand.ico"
+		},
+		"portable": {
+			"artifactName": "Magical App.exe"
+		},
+		"directories": {
+			"output": "electron/output",
+			"app": "./",
+			"buildResources": "electron/buildResources"
+		}
+	},
+	"config": {
+		"forge": {
+			"packagerConfig": {},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-squirrel",
+					"config": {
+						"name": "electron_app_1"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-zip",
+					"platforms": [
+						"darwin"
+					]
+				},
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {}
+				},
+				{
+					"name": "@electron-forge/maker-rpm",
+					"config": {}
+				}
+			]
+		}
+	}
+}
