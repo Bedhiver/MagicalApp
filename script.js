@@ -1,4 +1,4 @@
-const robot = require('robotjs');
+const robot = require("robotjs");
 const mouse = robot.getMousePos();
 
 let interval;
@@ -23,8 +23,10 @@ function startMagic() {
 		}, 10);
 	}, 300);
 
-	window.addEventListener('keydown', () => {
-		clearInterval(interval);
-		interval = 0;
+	window.addEventListener("keydown", (event) => {
+		if (event.key === "e" || event.key === "E") {
+			clearInterval(interval);
+			interval = 0;
+		}
 	});
 }
