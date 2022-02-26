@@ -16,6 +16,10 @@ $ npm install
 
 > Maybe, you will need to install manually some other dependencies for the the `robotjs` library (like `node-gyp`).
 
+```
+$ npm rebuild --runtime=electron --target=9.4.4 --disturl=https://atom.io/download/atom-shell --abi=72
+```
+
 Please, refer to these guides :
 
 - [robotjs installation](https://github.com/octalmage/robotjs)
